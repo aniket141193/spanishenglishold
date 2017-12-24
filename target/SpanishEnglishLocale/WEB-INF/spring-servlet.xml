@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context" 
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc 
+	http://www.springframework.org/schema/mvc/spring-mvc.xsd
+	http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/tx 
+	http://www.springframework.org/schema/tx/spring-tx.xsd
+	http://www.springframework.org/schema/context 
+	http://www.springframework.org/schema/context/spring-context.xsd
+	http://www.springframework.org/schema/task
+    http://www.springframework.org/schema/task/spring-task-3.0.xsd">
+
+	<context:component-scan	base-package="com.spanish.english.controller" />
+	
+	<task:annotation-driven />
+		
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+		<property name="viewClass">
+			<value>
+				org.springframework.web.servlet.view.tiles2.TilesView
+			</value>
+		</property>
+	</bean>
+	<bean id="tilesConfigurer"
+		class="org.springframework.web.servlet.view.tiles2.TilesConfigurer">
+		<property name="definitions">
+			<list>
+				<value>/WEB-INF/tiles.xml</value>
+			</list>
+		</property>
+	</bean>
+	
+	
+
+	<!-- Application Message Bundle -->
+	<bean id="messageSource"
+		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<property name="basename" value="classpath:messages" />
+		<property name="defaultEncoding" value="UTF-8"/>
+	</bean>
+
+	<bean id="localeChangeInterceptor"
+		class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+		<property name="paramName" value="lang" />
+	</bean>
+
+	<bean id="localeResolver"
+		class="org.springframework.web.servlet.i18n.CookieLocaleResolver" />
+
+	<bean id="handlerMapping"
+		class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping">
+		<property name="interceptors">
+			<ref bean="localeChangeInterceptor" />
+		</property>
+	</bean>
+
+	<!-- <bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/WebMillenniumDB" />
+		<property name="username" value="root" />
+		<property name="password" value="root" />
+	</bean> -->
+	
+	 <bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="org.postgresql.Driver" />
+		<property name="url" value="jdbc:postgresql://localhost:5432/webmillenniumdb" />
+		<property name="username" value="postgres" />
+		<property name="password" value="postgres" />
+	</bean> 
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		
+		<property name="dataSource" ref="dataSource" />
+		<property name="annotatedClasses">
+			<list>
+				<value>com.spanish.english.form.Contact</value>
+				<value>com.spanish.english.form.Operator</value>
+				<value>com.spanish.english.form.Establishment</value>
+				<value>com.spanish.english.form.Machine</value>
+				<value>com.spanish.english.form.Admin</value>
+				<value>com.spanish.english.form.Role</value>
+				<value>com.spanish.english.form.Technician</value>
+				<value>com.spanish.english.form.Country</value>
+				<value>com.spanish.english.form.MachineType</value>
+				<value>com.spanish.english.form.HopperType</value>
+				<value>com.spanish.english.form.CoinValidatorType</value>
+				<value>com.spanish.english.form.BillValidatorType</value>
+				
+				<value>com.spanish.english.form.InputMoneyHopper</value>
+				<value>com.spanish.english.form.InputMoneyCoinValidator</value>
+				<value>com.spanish.english.form.InputMoneyBillValidator</value>
+				<value>com.spanish.english.form.OutputMoneyHopper</value>
+				<value>com.spanish.english.form.OutputMoneyCoinValidator</value>
+				<value>com.spanish.english.form.OutputMoneyBillValidator</value>
+				
+				<value>com.spanish.english.form.MachineAccountingMovement</value>
+				<value>com.spanish.english.form.Hopper</value>
+				<value>com.spanish.english.form.CoinValidator</value>
+				<value>com.spanish.english.form.BillValidator</value>
+				<value>com.spanish.english.form.TotalCounter</value>
+				<value>com.spanish.english.form.PartialCounter</value>
+				<value>com.spanish.english.form.Collection</value>
+				
+				<value>com.spanish.english.form.Coins</value>
+				<value>com.spanish.english.form.Notes</value>
+				<value>com.spanish.english.form.Tokens</value>
+				<value>com.spanish.english.form.Bills</value>
+				
+				<value>com.spanish.english.form.PaymentDeviceType</value>
+				<value>com.spanish.english.form.InputMoneyPaymentDevice</value>
+				<value>com.spanish.english.form.OutputMoneyPaymentDevice</value>
+				<value>com.spanish.english.form.Users</value>
+				<value>com.spanish.english.form.UsersRole</value>
+				<value>com.spanish.english.form.RepairHistory</value>
+				<value>com.spanish.english.form.MachineProblems</value>
+				<value>com.spanish.english.form.SpareParts</value>
+				<value>com.spanish.english.form.Phone</value>
+				
+				<value>com.spanish.english.form.MachineHistory</value>
+				<value>com.spanish.english.form.MachinePercentageMapping</value>
+				<value>com.spanish.english.form.MachineUserMapping</value>
+				<value>com.spanish.english.form.MachineCollection</value>
+				<value>com.spanish.english.form.CoinsCollection</value>
+				<value>com.spanish.english.form.TokensCollection</value>
+				<value>com.spanish.english.form.NotesCollection</value>
+				
+				<value>com.spanish.english.form.TypesEstablishment</value>
+				<value>com.spanish.english.form.StatusEstablishment</value>
+				<value>com.spanish.english.form.StatusMachine</value>
+				<value>com.spanish.english.form.StatusOperator</value>
+				
+				<value>com.spanish.english.form.AgreedPercentage</value>
+				<value>com.spanish.english.form.PlayersGift</value>
+				<value>com.spanish.english.form.OtherExpenses</value>
+				
+			</list>
+		</property>
+		
+		<property name="hibernateProperties">
+			<props>
+				<!-- <prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop> -->				
+				<prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<bean id="myAppScheduleJobs" class="com.spanish.english.utility.LockMachineExe" /> 
+	
+	 <bean id="transactionInterceptor"
+	class="org.springframework.transaction.interceptor.TransactionInterceptor">
+	<property name="transactionManager" ref="hibernateTransactionManager" />
+	<property name="transactionAttributes">
+		<props>
+			<prop key="*">PROPAGATION_REQUIRED</prop>
+		</props>
+	</property>
+</bean>
+
+	<bean class="org.springframework.orm.hibernate4.HibernateTransactionManager"
+		id="hibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<!-- <bean id="txManager"
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="persistenceExceptionTranslationPostProcessor"
+		class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />
+ -->
+	
+	
+</beans>

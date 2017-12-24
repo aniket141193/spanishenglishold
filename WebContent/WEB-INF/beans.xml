@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean id="ContactDao" class="com.spanish.english.dao.ContactDaoImpl" ></bean>
+	<bean id="ContactServices" class="com.spanish.english.services.ContactServicesImpl" ></bean> 
+	
+	<bean id="OperatorDao" class="com.spanish.english.dao.OperatorDaoImpl" ></bean>
+	<bean id="OperatorServices" class="com.spanish.english.services.OperatorServicesImpl" ></bean> 
+	
+	<bean id="EstablishmentDao" class="com.spanish.english.dao.EstablishmentDaoImpl" ></bean>
+	<bean id="EstablishmentServices" class="com.spanish.english.services.EstablishmentServicesImpl" ></bean> 
+   	
+   	<bean id="MachineDao" class="com.spanish.english.dao.MachineDaoImpl" ></bean>
+	<bean id="MachineServices" class="com.spanish.english.services.MachineServicesImpl" ></bean> 
+	
+	 <bean id="AdminDao" class="com.spanish.english.dao.AdminDaoImpl" ></bean>
+	<bean id="AdminServices" class="com.spanish.english.services.AdminServicesImpl" ></bean>
+	
+	<bean id="TechnicianDao" class="com.spanish.english.dao.TechnicianDaoImpl" ></bean>
+	<bean id="TechnicianServices" class="com.spanish.english.services.TechnicianServicesImpl" ></bean>
+	
+	<bean id="CountryDao" class="com.spanish.english.dao.CountryDaoImpl" ></bean>
+	<bean id="CountryServices" class="com.spanish.english.services.CountryServicesImpl" ></bean>
+	
+	<bean id="MachineTypeDao" class="com.spanish.english.dao.MachineTypeDaoImpl" ></bean>
+	<bean id="MachineTypeServices" class="com.spanish.english.services.MachineTypeServicesImpl" ></bean> 
+	
+	<bean id="MachineAccountingMovementDao" class="com.spanish.english.dao.MachineAccountingMovementDaoImpl" ></bean>
+	<bean id="MachineAccountingMovementServices" class="com.spanish.english.services.MachineAccountingMovementServicesImpl" ></bean> 
+	
+	<bean id="HopperTypeDao" class="com.spanish.english.dao.HopperTypeDaoImpl" ></bean>
+	<bean id="HopperTypeServices" class="com.spanish.english.services.HopperTypeServicesImpl" ></bean> 
+	
+	<bean id="HopperDao" class="com.spanish.english.dao.HopperDaoImpl" ></bean>
+	<bean id="HopperServices" class="com.spanish.english.services.HopperServicesImpl" ></bean> 
+	
+	<bean id="CoinValidatorTypeDao" class="com.spanish.english.dao.CoinValidatorTypeDaoImpl" ></bean>
+	<bean id="CoinValidatorTypeServices" class="com.spanish.english.services.CoinValidatorTypeServicesImpl" ></bean> 
+	
+	<bean id="CoinValidatorDao" class="com.spanish.english.dao.CoinValidatorDaoImpl" ></bean>
+	<bean id="CoinValidatorServices" class="com.spanish.english.services.CoinValidatorServicesImpl" ></bean> 
+	
+	<bean id="BillValidatorTypeDao" class="com.spanish.english.dao.BillValidatorTypeDaoImpl" ></bean>
+	<bean id="BillValidatorTypeServices" class="com.spanish.english.services.BillValidatorTypeServicesImpl" ></bean> 
+	
+	<bean id="BillValidatorDao" class="com.spanish.english.dao.BillValidatorDaoImpl" ></bean>
+	<bean id="BillValidatorServices" class="com.spanish.english.services.BillValidatorServicesImpl" ></bean> 
+	
+	<bean id="CollectionDao" class="com.spanish.english.dao.CollectionDaoImpl"></bean>
+	<bean id="CollectionServices" class="com.spanish.english.services.CollectionServicesImpl"></bean>
+	
+	<bean id="TotalCounterDao" class="com.spanish.english.dao.TotalCounterDaoImpl"></bean>
+	<bean id="TotalCounterServices" class="com.spanish.english.services.TotalCounterServicesImpl"></bean>
+	
+	<bean id="PartialCounterDao" class="com.spanish.english.dao.PartialCounterDaoImpl"></bean>
+	<bean id="PartialCounterServices" class="com.spanish.english.services.PartialCounterServicesImpl"></bean>
+	
+	<bean id="CoinsDao" class="com.spanish.english.dao.CoinsDaoImpl" ></bean>
+	<bean id="CoinsServices" class="com.spanish.english.services.CoinsServicesImpl"></bean>
+	
+	<bean id="NotesDao" class="com.spanish.english.dao.NotesDaoImpl" ></bean>
+	<bean id="NotesServices" class="com.spanish.english.services.NotesServicesImpl"></bean>
+	
+	<bean id="TokensDao" class="com.spanish.english.dao.TokensDaoImpl" ></bean>
+	<bean id="TokensServices" class="com.spanish.english.services.TokensServicesImpl"></bean> 
+	
+	<bean id="BillsDao" class="com.spanish.english.dao.BillsDaoImpl" ></bean>
+	<bean id="BillsServices" class="com.spanish.english.services.BillsServicesImpl" ></bean> 
+	
+	<bean id="InputMoneyHopperDao" class="com.spanish.english.dao.InputMoneyHopperDaoImpl" ></bean>
+	<bean id="InputMoneyHopperServices" class="com.spanish.english.services.InputMoneyHopperServicesImpl" ></bean> 
+	
+	<bean id="OutputMoneyHopperDao" class="com.spanish.english.dao.OutputMoneyHopperDaoImpl" ></bean>
+	<bean id="OutputMoneyHopperServices" class="com.spanish.english.services.OutputMoneyHopperServicesImpl" ></bean> 
+	
+	<bean id="PaymentDeviceTypeDao" class="com.spanish.english.dao.PaymentDeviceTypeDaoImpl" ></bean>
+	<bean id="PaymentDeviceTypeServices" class="com.spanish.english.services.PaymentDeviceTypeServicesImpl" ></bean> 
+	
+	<bean id="InputMoneyPaymentDeviceDao" class="com.spanish.english.dao.InputMoneyPaymentDeviceDaoImpl" ></bean>
+	<bean id="InputMoneyPaymentDeviceServices" class="com.spanish.english.services.InputMoneyPaymentDeviceServicesImpl" ></bean> 
+	
+	<bean id="OutputMoneyPaymentDeviceDao" class="com.spanish.english.dao.OutputMoneyPaymentDeviceDaoImpl" ></bean>
+	<bean id="OutputMoneyPaymentDeviceServices" class="com.spanish.english.services.OutputMoneyPaymentDeviceServicesImpl" ></bean>
+	
+	<bean id="UsersDao" class="com.spanish.english.dao.UsersDaoImpl" ></bean>
+	<bean id="UsersServices" class="com.spanish.english.services.UsersServicesImpl" ></bean> 
+	
+	<bean id="UsersRoleDao" class="com.spanish.english.dao.UsersRoleDaoImpl" ></bean>
+	<bean id="UsersRoleServices" class="com.spanish.english.services.UsersRoleServicesImpl" ></bean> 
+	
+	<bean id="RepairHistoryDao" class="com.spanish.english.dao.RepairHistoryDaoImpl" ></bean>
+	<bean id="RepairHistoryServices" class="com.spanish.english.services.RepairHistoryServicesImpl" ></bean> 
+	
+	<bean id="SparePartsDao" class="com.spanish.english.dao.SparePartsDaoImpl" ></bean>
+	<bean id="SparePartsServices" class="com.spanish.english.services.SparePartsServicesImpl" ></bean> 
+	
+	<bean id="MachineProblemsDao" class="com.spanish.english.dao.MachineProblemsDaoImpl" ></bean>
+	<bean id="MachineProblemsServices" class="com.spanish.english.services.MachineProblemsServicesImpl" ></bean> 
+	
+	<bean id="PhoneDao" class="com.spanish.english.dao.PhoneDaoImpl" ></bean>
+	<bean id="PhoneServices" class="com.spanish.english.services.PhoneServicesImpl" ></bean> 
+	
+	<bean id="MachineHistoryDao" class="com.spanish.english.dao.MachineHistoryDaoImpl" ></bean>
+	<bean id="MachineHistoryServices" class="com.spanish.english.services.MachineHistoryServicesImpl" ></bean> 
+	
+	<bean id="PercentageDistributionDao" class="com.spanish.english.dao.PercentageDistributionDaoImpl"></bean>
+	<bean id="PercentageDistributionServices" class="com.spanish.english.services.PercentageDistributionServicesImpl"></bean>
+	
+	
+	<bean id="customAuthenticationProvider" class="com.spanish.english.authentication.provider.CustomAuthenticationProvider" ></bean>
+	
+</beans>
